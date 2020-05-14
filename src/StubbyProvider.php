@@ -13,6 +13,10 @@ class StubbyProvider extends ServiceProvider
         $this->commands([
             StubbyCommand::class,
         ]);
+
+        $this->publishes([
+            __DIR__.'/../stubs' => base_path('stubs'),
+        ], 'stubs');
     }
 
     public function register(): void

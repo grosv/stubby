@@ -1,0 +1,15 @@
+<?php
+
+namespace {{ namespace }};
+
+use Tests\TestCase;
+
+class {{ class }} extends TestCase
+{
+
+    /** @test */
+    public function it_can_do_a_thing()
+    {
+        $this->markTestIncomplete();
+    }
+}

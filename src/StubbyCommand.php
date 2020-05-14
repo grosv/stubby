@@ -36,7 +36,7 @@ class StubbyCommand extends Command
 
             return 1;
         }
-        if (empty($this->rawName)) {
+        if (empty($this->rawName) && $this->thing !== 'stubs') {
             $this->error('What are you trying to name the thing you are trying to build?');
             return 1;
         }
@@ -45,6 +45,7 @@ class StubbyCommand extends Command
                 File::append(base_path('.env'), "\nSTUBBY_FILE_OPEN_COMMAND=".$this->rawName);
                 $this->files->push(base_path('.env'));
                 break;
+
             case 'action':
                 $stub = File::get(base_path('stubs/action.stub'));
                 File::put(app_path('Actions/'.$this->studlyName).'.php', str_replace('{{ class }}', $this->studlyName, $stub));

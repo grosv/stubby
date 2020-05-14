@@ -1,0 +1,17 @@
+<?php
+
+namespace {{ namespace }};
+
+use NunoMaduro\LaravelMojito\InteractsWithViews;
+use PHPUnit\Framework\TestCase;
+
+class {{ class }} extends TestCase
+{
+    use InteractsWithViews;
+
+    /** @test */
+    public function it_can_do_a_thing()
+    {
+        $this->markTestIncomplete();
+    }
+}

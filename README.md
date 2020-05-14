@@ -37,7 +37,7 @@ Once you've done that, clone your forked repo and make it great for you. The cus
 Assuming you haven't made any modifications to my recipes or stubs, start with publishing the stubs. Some of these overwrite stubs provided by Laravel and other popular packages. Some are my own creations. This command will forcefully overwrite any files that already exist in the stubs/ folder of your Laravel app (where stubs are placed when you run `php artisan stub:publish`) with the contents of the stubs/folder of this package.
 
 ```shell script
-php artisan new stubs 
+php artisan vendor:publish --provider="Grosv\Stubby\StubbyProvider" --tag="stubs"  --force
 ```
 
 If you're like me, you want your files opened for you immediately upon creation. To that end, set a value in .env to correspond to the command your IDE uses to open a file. This is for my PHPStorm setup:
