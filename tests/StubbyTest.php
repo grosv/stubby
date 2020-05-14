@@ -16,7 +16,8 @@ class StubbyTest extends TestCase
     public function can_set_ide()
     {
         File::put(base_path('.env'), '');
-        $this->artisan('new ide pstorm');
+        $this->artisan('new ide pstorm')
+            ->assertExitCode(0);
         $env = File::get(base_path('.env'));
         $this->assertStringContainsString('STUBBY_FILE_OPEN_COMMAND=pstorm', $env);
         File::delete(base_path('.env'));
