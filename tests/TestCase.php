@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use Grosv\LaravelPackageTemplate\LaravelPackageTemplateProvider;
+use Grosv\Stubby\StubbyProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
@@ -19,7 +19,7 @@ abstract class TestCase extends BaseTestCase
 
     protected function getPackageProviders($app)
     {
-        return [LaravelPackageTemplateProvider::class];
+        return [StubbyProvider::class];
     }
 
     protected function getEnvironmentSetUp($app)
