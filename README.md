@@ -11,7 +11,7 @@ Stubby is a package that contains my customized stubs and recipes for creating n
 ### Installation
 
 ```shell script
-composer require grosv/stubby
+composer require grosv/stubby --dev
 ```
 
 If you love my recipes and customized stubs, then you can skip to the "How To Use" section. Otherwise, you'll need this:
