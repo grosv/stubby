@@ -95,19 +95,19 @@ class StubbyCommand extends Command
                 $this->files->push(base_path('tests/Feature/Http/Livewire/'.$this->studlyName.'Test.php'));
                 break;
             case 'model':
-                $this->call('make:model', ['name' => $this->studlyName, '-m' => true]);
+                $this->call('make:model', ['name' => $this->studlyName, '-m' => true, '-f' => true]);
+                // This didn't work
                 if (file_exists(app_path($this->studlyName.'.php'))) {
                     $this->files->push(app_path($this->studlyName.'.php'));
                 }
-                if (file_exists(app_path('Models/'.$this->studlyName.'.php'))) {
-                    $this->files->push('Models/'.app_path($this->studlyName.'.php'));
+                else {
+                    $this->files->push(app_path('Models/'.$this->studlyName.'.php'));
                 }
                 foreach (scandir(database_path('migrations/')) as $file) {
                     if (Str::contains($file, 'create_'.Str::snake(Str::plural($this->studlyName)))) {
                         $this->files->push(database_path('migrations/'.$file));
                     }
                 }
-                $this->call('make:factory', ['name' => $this->studlyName.'Factory', '--model' => 'App\\'.$this->studlyName]);
                 $this->files->push(database_path('factories/'.$this->studlyName.'Factory.php'));
 
                 break;
