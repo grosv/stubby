@@ -14,7 +14,7 @@
     "require": {
         "php": "^7.4",
         "illuminate/support": ">7.0",
-        "titasgailius/terminal": "^0.3.0"
+        "titasgailius/terminal": "^0.3|^0.4"
     },
     "require-dev": {
         "orchestra/testbench": "^5.0"
